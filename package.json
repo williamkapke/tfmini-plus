@@ -1,0 +1,22 @@
+{
+  "name": "tfmini-plus",
+  "version": "1.0.0",
+  "description": "A Node.js library for the TFMini Plus",
+  "main": "tfmini-plus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamkapke/tfmini-plus.git"
+  },
+  "author": "William Kapke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamkapke/tfmini-plus/issues"
+  },
+  "homepage": "https://github.com/williamkapke/tfmini-plus#readme",
+  "dependencies": {
+    "debug": "^4.1.1"
+  }
+}

@@ -80,7 +80,7 @@ TFMP.OBTAIN_DATA_FRAME_CM = Buffer.from([0x5A, 0x05, 0x00, 0x01, 0x60])
 TFMP.OBTAIN_DATA_FRAME_MM = Buffer.from([0x5A, 0x05, 0x00, 0x06, 0x65])
 
 module.exports = {
-  I2C: (bus, address) => {
+  I2C: async (bus, address) => {
     if (!bus._bus) {
       return Promise.reject(new Error('i2c-bus-promise not found'))
     }
@@ -115,6 +115,7 @@ module.exports = {
       return response
     }
 
+    await write(Buffer.from([0x5A, 0x06, 0x03, 0xE8, 0x03, 0x4E])) // set framerate to 1000
     return TFMP(write, read)
   },
 

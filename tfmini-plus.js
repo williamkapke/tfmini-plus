@@ -68,8 +68,8 @@ const TFMP = (write, read) => ({
   mode: async (type='i2c') => {
     debug('mode(%s)',type)
     const buff = type.toLowerCase()==='i2c'
-      ? Buffer.from([0x5A, 0x05, 0x0A, 0x01, 0x00])
-      : Buffer.from([0x5A, 0x05, 0x0A, 0x00, 0x00])
+      ? Buffer.from([0x5A, 0x05, 0x0A, 0x01, 0x6A])
+      : Buffer.from([0x5A, 0x05, 0x0A, 0x00, 0x69])
     buff[4] = sum(buff)
     await write(buff)
     // no response

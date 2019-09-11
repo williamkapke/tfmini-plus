@@ -3,7 +3,7 @@ const i2c = require('i2c-bus-promise') // NOT INCLUDED /W LIB - YOU MUST INSTALL
 
 i2c.open(1).then(async (bus) => {
   const tfmp = tfminiplus.I2C(bus, 0x10)
-  await tfmp.address(0x11)
+  await tfmp.address(0x12)
   await tfmp.save()
 })
 .catch(console.error)

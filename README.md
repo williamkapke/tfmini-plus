@@ -31,12 +31,14 @@ libraries out to keep from installing extra cruft that isn't needed.
 This means **you will need to install the [i2c-bus-promise](https://www.npmjs.com/package/i2c-bus-promise) or
 [@serialport/bindings](https://www.npmjs.com/package/@serialport/bindings) independently**.
 
-## i2c-bus-promise
+## i2c-bus@^5 OR i2c-bus-promise
 ```
 npm install i2c-bus-promise
 ```
-This library is **async** (Promise) based. The [i2c-bus](https://www.npmjs.com/package/i2c-bus) is not. The
-[i2c-bus-promise](https://www.npmjs.com/package/i2c-bus-promise) library is just a promise wrapper for it.
+This library is **async** (Promise) based. Prior to [i2c-bus](https://www.npmjs.com/package/i2c-bus)@^5.0.0,
+it did not offer Promise support. The [i2c-bus-promise](https://www.npmjs.com/package/i2c-bus-promise) library
+is just a promise wrapper for it. If you're using an older version of [i2c-bus](https://www.npmjs.com/package/i2c-bus)
+and upgrading is not possible- this lightweight wrapper accomplishes the same thing.
 
 You should be able to reuse an existing instance of [i2c-bus](https://www.npmjs.com/package/i2c-bus) if you
 already have one installed.

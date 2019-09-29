@@ -82,7 +82,7 @@ TFMP.OBTAIN_DATA_FRAME_MM = Buffer.from([0x5A, 0x05, 0x00, 0x06, 0x65])
 module.exports = {
   I2C: async (bus, address) => {
     if (!bus._bus) {
-      return Promise.reject(new Error('i2c-bus-promise not found'))
+      return Promise.reject(new Error('Promisified i2c-bus not found'))
     }
 
     const write = async (data) => {
@@ -110,7 +110,8 @@ module.exports = {
     }
 
     const read = async (size) => {
-      const response = await bus.i2cRead(address, size)
+      let response = await bus.i2cRead(address, size, Buffer.allocUnsafe(size))
+      if (response.buffer) response = response.buffer // i2c-bus@^5 compatibility
       debug('i2c[0x%h] read(%s): [%h]', address, size, response)
       return response
     }

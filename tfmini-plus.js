@@ -80,9 +80,10 @@ TFMP.OBTAIN_DATA_FRAME_CM = Buffer.from([0x5A, 0x05, 0x00, 0x01, 0x60])
 TFMP.OBTAIN_DATA_FRAME_MM = Buffer.from([0x5A, 0x05, 0x00, 0x06, 0x65])
 
 module.exports = {
-  I2C: async (bus, address) => {
-    if (!bus._bus) {
-      return Promise.reject(new Error('Promisified i2c-bus not found'))
+  I2C: async (bus, address = 0x10, provider = 'i2c-bus') => {
+    if (typeof bus !== 'object') {
+      // need to open bus
+      return require(provider).openPromisified(bus).then((bus) => module.exports.I2C(bus, address))
     }
 
     const write = async (data) => {

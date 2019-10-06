@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/williamkapke/tfmini-plus#readme",
   "dependencies": {
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "i2c-bus-promise": "^2.0.0"
   }
 }

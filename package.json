@@ -1,6 +1,6 @@
 {
   "name": "tfmini-plus",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "A Node.js library for the TFMini Plus",
   "main": "tfmini-plus.js",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/williamkapke/tfmini-plus#readme",
   "dependencies": {
-    "debug": "^4.1.1",
-    "i2c-bus-promise": "^2.0.0"
+    "debug": "^4.1.1"
   }
 }

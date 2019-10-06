@@ -27,11 +27,14 @@ All functions return a Promise.
 
 **DON'T FORGET TO `await` (or use `.then()`)!!**
 
-### I2C(bus, address = 0x10)
+### I2C(bus, address = `0x10`, provider = `'i2c-bus'`)
 Creates an I2C tfminiplus instance.
 
-**bus:** The [i2c-bus-promise](https://www.npmjs.com/package/i2c-bus-promise) instance<br>
-**address:** The i2c device address (factory default is `0x10`)
+**bus:**<br>
+ &middot; (Object) An existing bus instance<br>
+ &middot; (String or Number) The bus number to open<br>
+**address:** (Number) The i2c device address (factory default is `0x10`)<br>
+**provider:** (String) The Node module to use
 
 **Returns:** a Promise that resolve with the tfminiplus instance.
 
